@@ -12,7 +12,11 @@ Thank you for choosing EcoTravel! Follow these steps to set up the project local
 ### 2. Project Build and Setup
 1. Open up your IDE (e.g., Eclipse IDE for Enterprise Java or IntelliJ IDEA).
 2. Import the `EcoTravel` folder as an **Existing Maven Project**.
-3. *Note*: If your database credentials (username/password) are not `root` and empty `""`, modify the `URL`, `USER`, and `PASSWORD` constants inside `src/main/java/com/ecotravel/util/DBConnection.java`.
+3. Set the database environment variables before starting Tomcat:
+   - `DB_URL=jdbc:mysql://localhost:3306/ecotravel?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true`
+   - `DB_USER=<your MySQL username>`
+   - `DB_PASSWORD=<your MySQL password>`
+   Keep these values in your local `.env` file and do not commit that file.
 4. Let Maven sync to download dependencies such as the Servlet APIs and MySQL Connector.
 5. Alternatively, via command line context, run:
    ```bash
