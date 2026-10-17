@@ -50,6 +50,25 @@ public class UserDao {
         return null;
     }
 
+    public String getEmailById(int userId) {
+        String sql = "SELECT email FROM users WHERE id = ?";
+        Connection connection = DBConnection.getConnection();
+        if (connection == null) {
+            System.err.println("Failed to obtain DB connection while retrieving registered email");
+            return null;
+        }
+        try (Connection conn = connection;
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, userId);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next() ? rs.getString("email") : null;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public java.util.List<User> getAllUsers() {
         java.util.List<User> list = new java.util.ArrayList<>();
         String sql = "SELECT * FROM users";

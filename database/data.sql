@@ -72,6 +72,24 @@ VALUES (
         '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15531.0!2d75.09!3d13.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbaf50!2sAgumbe!5e0!3m2!1sen!2sin!4v170000!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
     ),
     (
+        5,
+        'Kodachadri',
+        'A Western Ghats peak known for forest trails, waterfalls, and panoramic views from the summit.',
+        9,
+        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80',
+        1800.00,
+        '<iframe src="https://www.google.com/maps?q=Kodachadri%2C+Karnataka&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+    ),
+    (
+        6,
+        'Dubare Elephant Camp',
+        'A riverside nature destination on the Cauvery, surrounded by forests and wildlife in the Coorg region.',
+        8,
+        'https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80',
+        1600.00,
+        '<iframe src="https://www.google.com/maps?q=Dubare+Elephant+Camp%2C+Karnataka&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+    ),
+    (
         7,
         'Chikmagalur',
         'The birthplace of coffee in India, offering stunning green slopes and trekking spots like Mullayanagiri.',
@@ -115,23 +133,9 @@ VALUES (
         'https://www.tourmyindia.com/blog/wp-content/uploads/2015/11/best-things-to-do-in-coorg.jpg',
         3000.00,
         '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15574.776694930833!2d75.66786284517163!3d12.602396152879013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4e2d26515b679%3A0x4ad0261ce59e827e!2sCoorg!5e0!3m2!1sen!2sin!4v1777571998011!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-    );;;
+    );
 
 -- Insert Eco-friendly Hotels with better details
-CREATE TABLE IF NOT EXISTS bookings (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    destination_id INT NOT NULL,
-    hotel_id INT NOT NULL,
-    transport_id INT NOT NULL,
-    contact_name VARCHAR(100) NOT NULL,
-    contact_mobile VARCHAR(15) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    total_cost DECIMAL(10, 2) NOT NULL,
-    status VARCHAR(50) DEFAULT 'Pending',
-    booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
 INSERT IGNORE INTO
     hotels (
         id,
@@ -171,7 +175,7 @@ VALUES (
     ),
     (
         4,
-        1,
+        7,
         'Chikmagalur Coffee Estate Retreat',
         'A heritage property situated inside a lush coffee plantation. Offers guided nature walks.',
         'chikkamagalur-1.jpg',
@@ -180,7 +184,7 @@ VALUES (
     ),
     (
         5,
-        2,
+        11,
         'Coorg Spice Trails Homestay',
         'Stay amidst black pepper and cardamom plantations. A true sensory experience of Coorg greenery.',
         'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -223,3 +227,6 @@ VALUES (
         5,
         1300.00
     );
+
+UPDATE hotels SET destination_id = 7 WHERE id = 4;
+UPDATE hotels SET destination_id = 11 WHERE id = 5;

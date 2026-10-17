@@ -67,6 +67,19 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>database</directory>
+                <targetPath>database</targetPath>
+                <includes>
+                    <include>schema.sql</include>
+                    <include>data.sql</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

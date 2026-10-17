@@ -1,0 +1,136 @@
+21-Sep-2026 10:53:23.283 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.4
+21-Sep-2026 10:53:23.285 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 13 2025 10:17:50 UTC
+21-Sep-2026 10:53:23.286 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.4.0
+21-Sep-2026 10:53:23.286 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+21-Sep-2026 10:53:23.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+21-Sep-2026 10:53:23.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+21-Sep-2026 10:53:23.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-25.0.2
+21-Sep-2026 10:53:23.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           25.0.2+10-LTS-69
+21-Sep-2026 10:53:23.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+21-Sep-2026 10:53:23.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 10:53:23.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 10:53:23.300 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\conf\logging.properties
+21-Sep-2026 10:53:23.300 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+21-Sep-2026 10:53:23.301 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+21-Sep-2026 10:53:23.301 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.io.useCanonCaches=false
+21-Sep-2026 10:53:23.301 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+21-Sep-2026 10:53:23.301 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+21-Sep-2026 10:53:23.302 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+21-Sep-2026 10:53:23.302 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+21-Sep-2026 10:53:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+21-Sep-2026 10:53:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+21-Sep-2026 10:53:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 10:53:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 10:53:23.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\temp
+21-Sep-2026 10:53:23.314 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+21-Sep-2026 10:53:23.348 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+21-Sep-2026 10:53:23.681 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+21-Sep-2026 10:53:23.710 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [645] milliseconds
+21-Sep-2026 10:53:23.775 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+21-Sep-2026 10:53:23.775 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.4]
+21-Sep-2026 10:53:23.808 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\EcoTravel.war]
+21-Sep-2026 10:53:23.829 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\EcoTravel] was found with a last modified time that did not match the associated WAR. It will be deleted.
+21-Sep-2026 10:53:25.994 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Sep-2026 10:53:26.151 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\EcoTravel.war] has finished in [2,340] ms
+21-Sep-2026 10:53:26.152 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\docs]
+21-Sep-2026 10:53:26.223 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\docs] has finished in [71] ms
+21-Sep-2026 10:53:26.224 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\examples]
+21-Sep-2026 10:53:26.661 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\examples] has finished in [437] ms
+21-Sep-2026 10:53:26.662 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\host-manager]
+21-Sep-2026 10:53:26.715 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\host-manager] has finished in [53] ms
+21-Sep-2026 10:53:26.715 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\manager]
+21-Sep-2026 10:53:26.774 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\manager] has finished in [59] ms
+21-Sep-2026 10:53:26.775 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\ROOT]
+21-Sep-2026 10:53:26.817 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\ROOT] has finished in [42] ms
+21-Sep-2026 10:53:26.822 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+21-Sep-2026 10:53:26.854 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3140] milliseconds
+21-Sep-2026 10:58:17.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.4
+21-Sep-2026 10:58:17.192 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 13 2025 10:17:50 UTC
+21-Sep-2026 10:58:17.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.4.0
+21-Sep-2026 10:58:17.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+21-Sep-2026 10:58:17.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+21-Sep-2026 10:58:17.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+21-Sep-2026 10:58:17.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-25.0.2
+21-Sep-2026 10:58:17.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           25.0.2+10-LTS-69
+21-Sep-2026 10:58:17.195 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+21-Sep-2026 10:58:17.195 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 10:58:17.195 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 10:58:17.203 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\conf\logging.properties
+21-Sep-2026 10:58:17.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+21-Sep-2026 10:58:17.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+21-Sep-2026 10:58:17.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.io.useCanonCaches=false
+21-Sep-2026 10:58:17.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+21-Sep-2026 10:58:17.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+21-Sep-2026 10:58:17.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+21-Sep-2026 10:58:17.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+21-Sep-2026 10:58:17.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+21-Sep-2026 10:58:17.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+21-Sep-2026 10:58:17.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 10:58:17.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 10:58:17.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\temp
+21-Sep-2026 10:58:17.213 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+21-Sep-2026 10:58:17.222 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+21-Sep-2026 10:58:17.551 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+21-Sep-2026 10:58:17.591 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [592] milliseconds
+21-Sep-2026 10:58:17.654 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+21-Sep-2026 10:58:17.654 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.4]
+21-Sep-2026 10:58:17.693 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\EcoTravel.war]
+21-Sep-2026 10:58:19.272 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Sep-2026 10:58:19.430 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\EcoTravel.war] has finished in [1,734] ms
+21-Sep-2026 10:58:19.431 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\docs]
+21-Sep-2026 10:58:19.485 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\docs] has finished in [54] ms
+21-Sep-2026 10:58:19.486 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\examples]
+21-Sep-2026 10:58:19.941 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\examples] has finished in [454] ms
+21-Sep-2026 10:58:19.941 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\host-manager]
+21-Sep-2026 10:58:19.998 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\host-manager] has finished in [57] ms
+21-Sep-2026 10:58:19.999 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\manager]
+21-Sep-2026 10:58:20.047 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\manager] has finished in [47] ms
+21-Sep-2026 10:58:20.047 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\ROOT]
+21-Sep-2026 10:58:20.093 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\ROOT] has finished in [45] ms
+21-Sep-2026 10:58:20.100 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+21-Sep-2026 10:58:20.140 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2545] milliseconds
+21-Sep-2026 11:03:40.031 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.4
+21-Sep-2026 11:03:40.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 13 2025 10:17:50 UTC
+21-Sep-2026 11:03:40.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.4.0
+21-Sep-2026 11:03:40.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+21-Sep-2026 11:03:40.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+21-Sep-2026 11:03:40.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+21-Sep-2026 11:03:40.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-25.0.2
+21-Sep-2026 11:03:40.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           25.0.2+10-LTS-69
+21-Sep-2026 11:03:40.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+21-Sep-2026 11:03:40.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 11:03:40.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 11:03:40.046 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\conf\logging.properties
+21-Sep-2026 11:03:40.047 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+21-Sep-2026 11:03:40.047 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+21-Sep-2026 11:03:40.047 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.io.useCanonCaches=false
+21-Sep-2026 11:03:40.048 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+21-Sep-2026 11:03:40.048 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+21-Sep-2026 11:03:40.048 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+21-Sep-2026 11:03:40.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+21-Sep-2026 11:03:40.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+21-Sep-2026 11:03:40.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+21-Sep-2026 11:03:40.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 11:03:40.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4
+21-Sep-2026 11:03:40.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\temp
+21-Sep-2026 11:03:40.055 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+21-Sep-2026 11:03:40.066 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+21-Sep-2026 11:03:40.405 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+21-Sep-2026 11:03:40.444 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [617] milliseconds
+21-Sep-2026 11:03:40.522 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+21-Sep-2026 11:03:40.523 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.4]
+21-Sep-2026 11:03:40.570 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\EcoTravel.war]
+21-Sep-2026 11:03:42.273 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+21-Sep-2026 11:03:42.426 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\EcoTravel.war] has finished in [1,852] ms
+21-Sep-2026 11:03:42.428 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\docs]
+21-Sep-2026 11:03:42.480 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\docs] has finished in [52] ms
+21-Sep-2026 11:03:42.481 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\examples]
+21-Sep-2026 11:03:42.945 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\examples] has finished in [464] ms
+21-Sep-2026 11:03:42.946 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\host-manager]
+21-Sep-2026 11:03:43.000 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\host-manager] has finished in [54] ms
+21-Sep-2026 11:03:43.001 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\manager]
+21-Sep-2026 11:03:43.060 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\manager] has finished in [58] ms
+21-Sep-2026 11:03:43.060 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\ROOT]
+21-Sep-2026 11:03:43.092 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Shivk\OneDrive\Desktop\web technology_project\EcoTravel\tomcat_extracted\apache-tomcat-11.0.4\webapps\ROOT] has finished in [32] ms
+21-Sep-2026 11:03:43.096 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+21-Sep-2026 11:03:43.130 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2682] milliseconds

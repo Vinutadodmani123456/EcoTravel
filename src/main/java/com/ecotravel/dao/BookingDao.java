@@ -178,7 +178,7 @@ public class BookingDao {
     }
 
     public boolean confirmBookingPayment(int bookingId) {
-        String sql = "UPDATE bookings SET status = 'Successful' WHERE id = ?";
+        String sql = "UPDATE bookings SET status = 'Successful' WHERE id = ? AND status = 'Pending'";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, bookingId);

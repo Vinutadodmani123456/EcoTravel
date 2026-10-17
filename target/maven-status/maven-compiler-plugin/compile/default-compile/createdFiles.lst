@@ -6,7 +6,6 @@ com\ecotravel\util\DBInitializer.class
 com\ecotravel\controller\SearchServlet.class
 com\ecotravel\util\WhatsAppUtil.class
 com\ecotravel\dao\DestinationDao.class
-com\ecotravel\util\EmailUtil$2.class
 com\ecotravel\util\EmailUtil.class
 com\ecotravel\dao\UserDao.class
 com\ecotravel\controller\AuthServlet.class

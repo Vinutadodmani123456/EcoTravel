@@ -6,8 +6,9 @@ Thank you for choosing EcoTravel! Follow these steps to set up the project local
 ### 1. Database Configuration
 1. Install [MySQL](https://dev.mysql.com/downloads/installer/) or a local stack like [XAMPP](https://www.apachefriends.org/).
 2. Open your MySQL client or phpMyAdmin.
-3. Import the `database/schema.sql` file. This creates the `ecotravel` database and its necessary tables: `users`, `destinations`, `hotels`, `transport`, `bookings`.
-4. Import the `database/data.sql` file. This injects sample administrators, properties, and green-travel modes for testing.
+3. Import `database/schema.sql` once. This creates the `ecotravel` database and its tables: `users`, `destinations`, `hotels`, and `bookings`.
+4. On startup, the application initializes the schema and loads the sample users, destinations, and hotels from `database/data.sql`. The sample inserts are idempotent and do not delete existing hotels.
+5. If the listings are still empty, check the Tomcat startup log for a database connection or initialization error and verify the database settings below.
 
 ### 2. Project Build and Setup
 1. Open up your IDE (e.g., Eclipse IDE for Enterprise Java or IntelliJ IDEA).
@@ -16,9 +17,14 @@ Thank you for choosing EcoTravel! Follow these steps to set up the project local
    - `DB_URL=jdbc:mysql://localhost:3306/ecotravel?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true`
    - `DB_USER=<your MySQL username>`
    - `DB_PASSWORD=<your MySQL password>`
-   Keep these values in your local `.env` file and do not commit that file.
-4. Let Maven sync to download dependencies such as the Servlet APIs and MySQL Connector.
-5. Alternatively, via command line context, run:
+   Set email delivery for booking confirmations too:
+   - `MAIL_USERNAME=<your SMTP account email>`
+   - `MAIL_PASSWORD=<your SMTP app password>`
+   - Optional: `MAIL_FROM=<sender email>`, `MAIL_SMTP_HOST=smtp.gmail.com`, `MAIL_SMTP_PORT=465`
+   The default SMTP settings use SSL on port 465. Keep all credentials in your local `.env` file and do not commit that file. Restart Tomcat after changing `.env`.
+4. Booking confirmation emails are sent to the email address on the registered user account after payment is confirmed. The SMTP account must allow SMTP/app-password access.
+5. Let Maven sync to download dependencies such as the Servlet APIs and MySQL Connector.
+6. Alternatively, via command line context, run:
    ```bash
    mvn clean install
    ```

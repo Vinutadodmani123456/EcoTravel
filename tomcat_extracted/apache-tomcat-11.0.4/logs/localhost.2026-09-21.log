@@ -1,0 +1,740 @@
+21-Sep-2026 10:53:26.645 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+21-Sep-2026 10:53:26.646 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+21-Sep-2026 10:53:26.649 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@8840c98')
+21-Sep-2026 10:53:35.453 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.IllegalStateException: Missing required environment variable: DB_URL
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:53:53.596 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_URL [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:56:10.788 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_URL [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:56:13.592 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_URL [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:56:15.536 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_URL [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:56:37.634 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_URL [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:56:41.882 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_URL [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:56:45.647 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_URL [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:56:58.144 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_URL [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:57:06.932 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [/index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_URL [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:8)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:58:19.925 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+21-Sep-2026 10:58:19.925 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+21-Sep-2026 10:58:19.927 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@43935e9c')
+21-Sep-2026 10:58:23.546 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.IllegalStateException: Missing required environment variable: DB_USER
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:9)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:59:42.343 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_USER [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:9)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:59:46.071 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_USER [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:9)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:59:48.379 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_USER [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:9)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:59:49.290 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_USER [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:9)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 10:59:50.493 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: Missing required environment variable: DB_USER [in thread "http-nio-8080-exec-1"]
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:9)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)
+21-Sep-2026 11:03:42.931 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+21-Sep-2026 11:03:42.931 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+21-Sep-2026 11:03:42.934 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@30922f8d')
+21-Sep-2026 11:03:52.713 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/EcoTravel] threw exception [An exception occurred processing [index.jsp] at line [6]
+
+3:         <%@ page import="java.util.List" %>
+4:             <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+5:                 <% DestinationDao destDao=new DestinationDao(); List<Destination> topDestinations =
+6:                     destDao.getAllDestinations();
+7:                     com.ecotravel.model.User currentUser = (com.ecotravel.model.User) session.getAttribute("user");
+8:                     String ctxPath = request.getContextPath();
+9:                     %>
+
+
+Stacktrace:] with root cause
+	java.lang.IllegalStateException: Missing required environment variable: DB_PASSWORD
+		at com.ecotravel.util.DBConnection.requiredEnv(DBConnection.java:15)
+		at com.ecotravel.util.DBConnection.<clinit>(DBConnection.java:10)
+		at com.ecotravel.dao.DestinationDao.getAllDestinations(DestinationDao.java:20)
+		at org.apache.jsp.index_jsp._jspService(index_jsp.java:133)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:67)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:354)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:302)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:716)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:130)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:109)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:79)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:395)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1748)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1474)

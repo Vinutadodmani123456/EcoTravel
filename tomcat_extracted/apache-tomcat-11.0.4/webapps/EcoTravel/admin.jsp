@@ -186,7 +186,14 @@
                 <tr>
                     <td style="font-weight:bold;">#${b.id}</td>
                     <td>${b.contactName} (${b.contactMobile})</td>
-                    <td>${b.destinationName}</td>
+                    <td><c:choose>
+    <c:when test="${b.bookingType == 'hotel'}">
+        ${b.hotelName}
+    </c:when>
+    <c:otherwise>
+        ${b.destinationName}
+    </c:otherwise>
+</c:choose></td>
                     <td style="color:#d32f2f; font-weight:bold;">₹${b.totalCost}</td>
                     <td style="color:green;font-weight:bold;">${b.status}</td>
                     <td><small>${b.bookingDate}</small></td>

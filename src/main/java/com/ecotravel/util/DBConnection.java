@@ -5,14 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private static final String URL = requiredEnv("DB_URL");
-    private static final String USER = requiredEnv("DB_USER");
-    private static final String PASSWORD = requiredEnv("DB_PASSWORD");
+    private static final String URL = getEnvOrDefault("DB_URL", "jdbc:mysql://localhost:3306/ecotravel?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true");
+    private static final String USER = getEnvOrDefault("DB_USER", "root");
+    private static final String PASSWORD = getEnvOrDefault("DB_PASSWORD", "Vinuta@1234");
 
-    private static String requiredEnv(String name) {
+    public static String getEnvOrDefault(String name, String defaultValue) {
         String value = System.getenv(name);
-        if (value == null || value.isBlank()) {
-            throw new IllegalStateException("Missing required environment variable: " + name);
+        if (value == null || value.trim().isEmpty()) {
+            return defaultValue;
         }
         return value;
     }

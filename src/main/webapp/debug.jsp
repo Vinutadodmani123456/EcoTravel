@@ -31,20 +31,28 @@
             <th>ID</th><th>Username</th><th>Email</th><th>Password</th><th>Role</th>
         </tr>
         <%
-            try (Connection conn = DBConnection.getConnection();
-                 Statement stmt = conn.createStatement();
-                 ResultSet rs = stmt.executeQuery("SELECT * FROM users")) {
-                while (rs.next()) {
-                    out.println("<tr>");
-                    out.println("<td>" + rs.getInt("id") + "</td>");
-                    out.println("<td>" + rs.getString("username") + "</td>");
-                    out.println("<td>" + rs.getString("email") + "</td>");
-                    out.println("<td>" + rs.getString("password") + "</td>");
-                    out.println("<td>" + rs.getString("role") + "</td>");
-                    out.println("</tr>");
+            out.println("<p>URL: " + DBConnection.getEnvOrDefault("DB_URL", "DEFAULT_URL") + "</p>");
+            out.println("<p>USER: " + DBConnection.getEnvOrDefault("DB_USER", "DEFAULT_USER") + "</p>");
+            out.println("<p>PASS LEN: " + (DBConnection.getEnvOrDefault("DB_PASSWORD", "").length()) + "</p>");
+            try {
+                Connection conn = DBConnection.getConnection();
+                out.println("<p>Conn object: " + conn + "</p>");
+                if (conn != null) {
+                    Statement stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery("SELECT * FROM users");
+                    while (rs.next()) {
+                        out.println("<tr>");
+                        out.println("<td>" + rs.getInt("id") + "</td>");
+                        out.println("<td>" + rs.getString("username") + "</td>");
+                        out.println("<td>" + rs.getString("email") + "</td>");
+                        out.println("<td>" + rs.getString("password") + "</td>");
+                        out.println("<td>" + rs.getString("role") + "</td>");
+                        out.println("</tr>");
+                    }
+                    conn.close();
                 }
-            } catch (Exception e) {
-                out.println("<tr><td colspan='5'>Error: " + e.getMessage() + "</td></tr>");
+            } catch (Throwable e) {
+                out.println("<tr><td colspan='5'>Error: " + e.getClass().getName() + " - " + e.getMessage() + "</td></tr>");
             }
         %>
     </table>

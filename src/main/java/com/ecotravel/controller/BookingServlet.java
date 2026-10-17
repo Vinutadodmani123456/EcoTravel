@@ -2,6 +2,7 @@ package com.ecotravel.controller;
 
 import com.ecotravel.dao.BookingDao;
 import com.ecotravel.dao.DestinationDao;
+import com.ecotravel.dao.UserDao;
 import com.ecotravel.model.Booking;
 import com.ecotravel.model.Destination;
 import com.ecotravel.model.Hotel;
@@ -21,6 +22,7 @@ import java.util.List;
 public class BookingServlet extends HttpServlet {
     private BookingDao bookingDao = new BookingDao();
     private DestinationDao destDao = new DestinationDao();
+    private UserDao userDao = new UserDao();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -72,7 +74,8 @@ public class BookingServlet extends HttpServlet {
             b.setUserId(user != null ? user.getId() : 0);
             b.setContactName(contactName);
             b.setContactMobile(contactMobile);
-            b.setEmail(contactEmail);
+            b.setEmail(user != null && user.getEmail() != null && !user.getEmail().trim().isEmpty()
+                    ? user.getEmail() : contactEmail);
             b.setBookingType(bookingType);
 
             if ("destination".equals(bookingType)) {
@@ -136,9 +139,6 @@ public class BookingServlet extends HttpServlet {
             if (b != null) {
                 boolean success = bookingDao.confirmBookingPayment(bookingId);
                 if (success) {
-                    // Log payment confirmed and prepare notification
-                    System.out.println(">>> [DEBUG] Payment Confirmed. Sending Email and WhatsApp to: " + b.getEmail());
-
                     // Populate transient name fields if they are null
                     if ("hotel".equals(b.getBookingType())) {
                         com.ecotravel.model.Hotel h = destDao.getHotelById(b.getHotelId());
@@ -154,25 +154,28 @@ public class BookingServlet extends HttpServlet {
                     // Determine the booked place (destination or hotel) name
                     String placeName = "hotel".equals(b.getBookingType()) ? b.getHotelName() : b.getDestinationName();
 
-                    // Build confirmation message including the place name
-                    String confirmationMsg = 
-                    "*EcoTravel - Green Tour Planning Portal*\n" +
-                    "--------------------------------------------\n" +
-                    "*Booking Confirmed!*\n\n" +
-                    "Hello, thank you for choosing a sustainable adventure with EcoTravel.\n\n" +
-                    "Your trip to " + placeName + " has been confirmed.\n\n" +
-                    "Your green trip has been validated and confirmed. We are excited to have you on board for a responsible travel experience!\n\n" +
-                    "*Booking Status:* Confirmed\n" +
-                    "*Eco-Score:* High\n\n" +
-                    "Visit our portal for more details. Have a safe and green journey!\n" +
-                    "--------------------------------------------\n" +
-                    "*Travel Responsibly, Travel Green.*";
-                    
-                    com.ecotravel.util.EmailUtil.sendPlainEmail(b.getEmail(), "Booking Confirmed - EcoTravel Karnataka", confirmationMsg);
-                    // SMS sending disabled per request
-
-                // Send a simple plain message to user's phone number
-
+                    String recipientEmail = b.getUserId() > 0
+                            ? userDao.getEmailById(b.getUserId())
+                            : b.getEmail();
+                    if (recipientEmail == null || recipientEmail.trim().isEmpty()) {
+                        getServletContext().log("Booking " + bookingId
+                                + " was confirmed, but no recipient email is available.");
+                    } else {
+                        try {
+                            if ("hotel".equals(b.getBookingType())) {
+                                com.ecotravel.util.EmailUtil.sendBookingEmail(
+                                        recipientEmail, b.getContactName(), null, b.getHotelName(),
+                                        b.getTotalCost());
+                            } else {
+                                com.ecotravel.util.EmailUtil.sendBookingConfirmationEmail(
+                                        recipientEmail, b.getContactName(), placeName,
+                                        b.getTotalCost(), bookingId);
+                            }
+                        } catch (IllegalStateException e) {
+                            getServletContext().log("Booking " + bookingId
+                                    + " was confirmed, but its confirmation email could not be sent.", e);
+                        }
+                    }
                     
                     String successMsg;
                     if ("hotel".equals(b.getBookingType())) {
@@ -223,8 +226,18 @@ public class BookingServlet extends HttpServlet {
                     "Refund: Will be processed within 24 hours.\n\n" +
                     "Visit our portal for more details.";
                 
-                // Send email notification
-                com.ecotravel.util.EmailUtil.sendPlainEmail(b.getEmail(), "Booking Cancelled - EcoTravel Karnataka", cancelMsg);
+                try {
+                    String recipientEmail = b.getUserId() > 0
+                            ? userDao.getEmailById(b.getUserId())
+                            : b.getEmail();
+                    if (recipientEmail != null && !recipientEmail.trim().isEmpty()) {
+                        com.ecotravel.util.EmailUtil.sendPlainEmail(
+                                recipientEmail, "Booking Cancelled - EcoTravel Karnataka", cancelMsg);
+                    }
+                } catch (IllegalStateException e) {
+                    getServletContext().log("Booking " + bookingId
+                            + " was cancelled, but its notification email could not be sent.", e);
+                }
 
                 
                 // Redirect with formatted message for UI display

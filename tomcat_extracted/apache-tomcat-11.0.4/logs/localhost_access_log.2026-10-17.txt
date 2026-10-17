@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [17/Oct/2026:09:43:50 +0530] "GET /EcoTravel/ HTTP/1.1" 200 45106
+0:0:0:0:0:0:0:1 - - [17/Oct/2026:09:45:37 +0530] "GET /EcoTravel/destinations?action=hotels HTTP/1.1" 200 102285
+0:0:0:0:0:0:0:1 - - [17/Oct/2026:09:45:53 +0530] "GET /EcoTravel/ HTTP/1.1" 200 45106
+0:0:0:0:0:0:0:1 - - [17/Oct/2026:09:45:53 +0530] "GET /EcoTravel/style.css HTTP/1.1" 200 5977
+0:0:0:0:0:0:0:1 - - [17/Oct/2026:09:45:54 +0530] "GET /EcoTravel/images/about_illustration.png HTTP/1.1" 200 185234
