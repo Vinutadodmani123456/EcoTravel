@@ -1,0 +1,10 @@
+.git
+.env
+.gitignore
+target
+tomcat_extracted
+maven_extracted
+EcoTravel_Project_Final
+brain
+*.zip
+*.log
